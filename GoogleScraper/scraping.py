@@ -349,6 +349,7 @@ class SearchEngineScrape(metaclass=abc.ABCMeta):
     def detection_prevention_sleep(self):
         # match the largest sleep range
         self.current_delay = random.randrange(*self._largest_sleep_range(self.search_number))
+        self.current_delay += 10.0
         time.sleep(self.current_delay)
 
     def after_search(self):
